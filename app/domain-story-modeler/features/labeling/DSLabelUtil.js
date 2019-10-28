@@ -137,7 +137,7 @@ export function autocomplete(inp, arr, element) {
     /* append the DIV element as a child of the autocomplete container:*/
     this.parentNode.appendChild(autocompleteList);
     /* for each item in the array...*/
-    for (const name of arr) {
+    for (var name of arr) {
       /* check if the item starts with the same letters as the text field value:*/
       if (val) {
         if (name.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
@@ -216,7 +216,7 @@ export function autocomplete(inp, arr, element) {
   function removeActive(autocompleteList) {
     /* a function to remove the "active" class from all autocomplete items:*/
     if (autocompleteList.length > 1) {
-      for (const item of autocompleteList) {
+      for (var item of autocompleteList) {
         item.classList.remove('autocomplete-active');
       }
     }
@@ -228,7 +228,7 @@ export function autocomplete(inp, arr, element) {
     let autocompleteList = document.getElementsByClassName(
       'autocomplete-items'
     );
-    for (const item of autocompleteList) {
+    for (var item of autocompleteList) {
       if (survivor != item && survivor != inp) {
         item.parentNode.removeChild(item);
       }
